@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperwerk | AI Automation Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',  // Vibrant blue
+                        secondary: '#10B981', // Emerald green
+                        dark: '#1E293B',      // Dark slate
+                        light: '#F8FAFC',     // Light slate
+                        accent: '#8B5CF6',    // Purple
+                        futuristic: '#06B6D4', // Cyan
+                        tech: '#3B82F6'       // Bright blue
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%);
+        }
+        
+        .futuristic-gradient {
+            background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        
+        .tech-icon {
+            background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-bolt text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary">Hyperwerk</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#services" class="nav-link text-gray-700 hover:text-tech px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="#approach" class="nav-link text-gray-700 hover:text-tech px-3 py-2 text-sm font-medium">Approach</a>
+                    <a href="#roi" class="nav-link text-gray-700 hover:text-tech px-3 py-2 text-sm font-medium">ROI</a>
+                    <a href="#contact" class="bg-tech text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition duration-300 glow">Get Started</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-tech focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tech hover:bg-gray-50">Services</a>
+                <a href="#approach" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tech hover:bg-gray-50">Approach</a>
+                <a href="#roi" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-tech hover:bg-gray-50">ROI</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-tech hover:bg-opacity-90">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">We don't build shiny objects. We scale processes that already make you money.</h1>
+                    <p class="text-xl mb-8 opacity-90">AI automation that delivers tangible business results with measurable ROI, not empty promises.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-md text-lg font-semibold hover:bg-opacity-90 transition duration-300 text-center glow">Get Your Automation Roadmap</a>
+                        <a href="#services" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">Explore Services</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-accent rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full opacity-20"></div>
+                        <div class="relative bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white border-opacity-20 glow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="bg-black bg-opacity-30 rounded-lg p-4 mb-4">
+                                <p class="text-sm font-mono text-white">$ Current Revenue: <span class="text-green-400">$125,000/mo</span></p>
+                                <p class="text-sm font-mono text-white">$ Projected Revenue: <span class="text-accent">$187,500/mo</span></p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <p class="text-sm text-dark mb-2">Automation Impact Analysis:</p>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-xs text-gray-600">Lead Response Time</span>
+                                    <span class="text-xs font-semibold text-primary">-85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-3">
+                                    <div class="bg-tech h-1.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-xs text-gray-600">Conversion Rate</span>
+                                    <span class="text-xs font-semibold text-primary">+42%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-3">
+                                    <div class="bg-tech h-1.5 rounded-full" style="width: 42%"></div>
+                                </div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-xs text-gray-600">Operational Costs</span>
+                                    <span class="text-xs font-semibold text-primary">-30%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-tech h-1.5 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Problems Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">We Solve Real Business Problems</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Focusing on three key areas that directly impact your bottom line</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Revenue Generation -->
+                <div class="bg-light rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line tech-icon text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Revenue Generation</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Increasing leads flow</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Improving customer lifetime value</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Boosting conversion rates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Enhancing customer retention</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Cost Savings -->
+                <div class="bg-light rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-piggy-bank tech-icon text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Cost Savings</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Reducing operational expenses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Optimizing software expenditures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Strategic headcount efficiency</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Time Leverage -->
+                <div class="bg-light rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-clock tech-icon text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Time Leverage</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Freeing up founder and executive time</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Eliminating repetitive administrative tasks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                            <span>Accelerating business processes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="approach" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Our Differentiated Approach</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Why we deliver better results than typical automation providers</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 futuristic-gradient rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bullseye text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Amplify What Works</h3>
+                    <p class="text-gray-600">We focus on enhancing processes that are already working in your business, not reinventing the wheel.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 futuristic-gradient rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-pie text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Tangible Outputs</h3>
+                    <p class="text-gray-600">We create systems that deliver measurable results you can see in your bottom line.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 futuristic-gradient rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-puzzle-piece text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Templated Solutions</h3>
+                    <p class="text-gray-600">80% pre-built components with 20% customization means faster implementation.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 futuristic-gradient rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Fast Deployment</h3>
+                    <p class="text-gray-600">Reduced wait time between payment and results with our streamlined processes.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 futuristic-gradient rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-universal-access text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Platform Agnostic</h3>
+                    <p class="text-gray-600">Implementations that work across tools and aren't locked to specific vendors.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 futuristic-gradient rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Reliability First</h3>
+                    <p class="text-gray-600">We prioritize consistent, reliable results over unnecessary flexibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Our Automation Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Proven solutions that deliver measurable business impact</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-light rounded-xl p-8 shadow-sm transition duration-300">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-envelope-open-text tech-icon text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Deep Personalization Cold Outreach</h3>
+                            <span class="inline-block bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded-full">Revenue Generation</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Transform your outreach from generic to genuinely engaging with AI-powered personalization that delivers 5x the results.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3 text-dark">Key Benefits:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>20-40% improvement in email reply rates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Boost response rates from 3% to 15% (5x increase)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Save significant time compared to manual personalization</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-tech font-medium hover:text-opacity-80">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-light rounded-xl p-8 shadow-sm transition duration-300">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-file-invoice-dollar tech-icon text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Invoice & Payment Automation</h3>
+                            <span class="inline-block bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded-full">Cost Savings</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Stop chasing payments and start receiving them on time with intelligent invoice management that improves cash flow.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3 text-dark">Key Benefits:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Dramatically reduce late and unpaid invoices</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Improve cash flow for faster business growth</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Save hours spent on manual invoice tracking</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-tech font-medium hover:text-opacity-80">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-light rounded-xl p-8 shadow-sm transition duration-300">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-users tech-icon text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Intelligent CRM Automation</h3>
+                            <span class="inline-block bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded-full">Revenue Generation</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Never lose a lead again with automated capture, enrichment, and routing to the right team member.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3 text-dark">Key Benefits:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Capture and categorize every lead properly</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Enrich lead data automatically for better sales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Improve lead-to-customer conversion rates</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-tech font-medium hover:text-opacity-80">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-light rounded-xl p-8 shadow-sm transition duration-300">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-file-contract tech-icon text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Proposal Generation Automation</h3>
+                            <span class="inline-block bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded-full">Time Leverage</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Create beautiful, customized client proposals in seconds instead of hours without sacrificing quality.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3 text-dark">Key Benefits:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Slash proposal creation time by 90%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Create consistent, professional-looking documents</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Improve close rates with faster response times</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-tech font-medium hover:text-opacity-80">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-light rounded-xl p-8 shadow-sm transition duration-300">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-user-plus tech-icon text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Client Onboarding Automation</h3>
+                            <span class="inline-block bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded-full">Time Leverage</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Deliver an exceptional first impression while eliminating administrative hassle in your onboarding process.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3 text-dark">Key Benefits:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Professional, consistent onboarding experience</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Eliminate back-and-forth for basic information</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Improve client satisfaction from day one</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-tech font-medium hover:text-opacity-80">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-light rounded-xl p-8 shadow-sm transition duration-300">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech bg-opacity-10 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-headset tech-icon text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Customer Support Automation</h3>
+                            <span class="inline-block bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded-full">Cost Savings</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Reduce support costs while improving response times with intelligent ticket handling and routing.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3 text-dark">Key Benefits:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Handle 20-30% of support inquiries automatically</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Significantly reduce support staff requirements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Improve customer satisfaction with faster responses</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-tech font-medium hover:text-opacity-80">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-tech hover:bg-opacity-90 transition duration-300 glow">
+                    See All Services <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="roi" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Calculate Your Automation ROI</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">See how automation can impact your bottom line</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-semibold mb-6">Potential Impact</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label for="revenue" class="block text-sm font-medium text-gray-700 mb-1">Current Monthly Revenue ($)</label>
+                                <input type="number" id="revenue" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-tech focus:border-tech" value="100000">
+                            </div>
+                            
+                            <div>
+                                <label for="improvement" class="block text-sm font-medium text-gray-700 mb-1">Expected Improvement (%)</label>
+                                <input type="range" id="improvement" min="1" max="20" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>1%</span>
+                                    <span id="improvement-value">5%</span>
+                                    <span>20%</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="time-saved" class="block text-sm font-medium text-gray-700 mb-1">Hours Saved Per Week</label>
+                                <input type="range" id="time-saved" min="5" max="40" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>5h</span>
+                                    <span id="time-saved-value">10h</span>
+                                    <span>40h</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="hourly-rate" class="block text-sm font-medium text-gray-700 mb-1">Average Hourly Rate ($)</label>
+                                <input type="number" id="hourly-rate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-tech focus:border-tech" value="50">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 futuristic-gradient text-white p-8 md:p-12">
+                        <h3 class="text-2xl font-semibold mb-6">Your Potential ROI</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Monthly Revenue Increase</span>
+                                    <span id="revenue-increase" class="text-xl font-bold">$5,000</span>
+                                </div>
+                                <p class="text-sm opacity-80">Based on <span id="improvement-text">5%</span> improvement to your current revenue</p>
+                            </div>
+                            
+                            <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Monthly Time Savings</span>
+                                    <span id="time-savings" class="text-xl font-bold">$2,000</span>
+                                </div>
+                                <p class="text-sm opacity-80">From <span id="hours-saved-text">10</span> hours/week at $<span id="rate-text">50</span>/hour</p>
+                            </div>
+                            
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Total Monthly Value</span>
+                                    <span id="total-value" class="text-2xl font-bold">$7,000</span>
+                                </div>
+                                <p class="text-sm opacity-80">Combined impact of revenue increase and time savings</p>
+                            </div>
+                            
+                            <div class="pt-4">
+                                <p class="text-sm opacity-90 mb-4">Our automation systems typically deliver between $1,500-$10,000 in value per implementation.</p>
+                                <a href="#contact" class="block w-full bg-white text-tech text-center py-3 rounded-md font-medium hover:bg-opacity-90 transition duration-300">
+                                    Get Your Custom ROI Analysis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real results from businesses like yours</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-light rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/42.jpg" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-dark">Sarah Johnson</div>
+                            <div class="text-sm text-gray-500">CEO, TechSolutions Inc.</div>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 mb-4">
+                        <p>"The outreach automation system increased our meeting bookings by 5x while saving our sales team 15 hours per week. The ROI was clear within the first month."</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-light rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-dark">Michael Chen</div>
+                            <div class="text-sm text-gray-500">Founder, GrowthMarketing Co.</div>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 mb-4">
+                        <p>"Our onboarding process went from being a pain point to a competitive advantage. Clients now rave about how smooth and professional it feels."</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-light rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-dark">Emily Rodriguez</div>
+                            <div class="text-sm text-gray-500">COO, LegalTech Partners</div>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 mb-4">
+                        <p>"The invoice automation cut our late payments by 75% and improved our cash flow dramatically. It paid for itself in the first quarter."</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">Ready to Automate What Works?</h2>
+                    <p class="text-xl mb-6 opacity-90">Book a free consultation to identify the highest-ROI automation opportunities in your business.</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-secondary text-xl mr-2"></i>
+                        <span>No obligation</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-secondary text-xl mr-2"></i>
+                        <span>Custom automation roadmap</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-secondary text-xl mr-2"></i>
+                        <span>ROI analysis for your business</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg glow">
+                        <h3 class="text-xl font-semibold mb-6">Schedule Your Free Consultation</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-md focus:ring-2 focus:ring-white focus:border-white" placeholder="Your name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-md focus:ring-2 focus:ring-white focus:border-white" placeholder="Your email">
+                            </div>
+                            <div class="mb-4">
+                                <label for="company" class="block text-sm font-medium mb-1">Company</label>
+                                <input type="text" id="company" class="w-full px-4 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-md focus:ring-2 focus:ring-white focus:border-white" placeholder="Your company">
+                            </div>
+                            <div class="mb-6">
+                                <label for="challenge" class="block text-sm font-medium mb-1">Biggest Challenge</label>
+                                <select id="challenge" class="w-full px-4 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-md focus:ring-2 focus:ring-white focus:border-white">
+                                    <option value="">Select your biggest challenge</option>
+                                    <option value="lead-generation">Lead Generation</option>
+                                    <option value="conversion-rates">Conversion Rates</option>
+                                    <option value="operational-efficiency">Operational Efficiency</option>
+                                    <option value="time-management">Time Management</option>
+                                    <option value="cash-flow">Cash Flow</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-tech py-3 px-4 rounded-md font-medium hover:bg-opacity-90 transition duration-300">
+                                Book Free Consultation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-tech text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-white">Hyperwerk</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">ROI-focused automation solutions that amplify what's already working in your business.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cold Outreach Automation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Invoice Automation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">CRM Automation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Proposal Generation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Hyperwerk. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // ROI Calculator functionality
+        const revenueInput = document.getElementById('revenue');
+        const improvementInput = document.getElementById('improvement');
+        const improvementValue = document.getElementById('improvement-value');
+        const improvementText = document.getElementById('improvement-text');
+        const timeSavedInput = document.getElementById('time-saved');
+        const timeSavedValue = document.getElementById('time-saved-value');
+        const hoursSavedText = document.getElementById('hours-saved-text');
+        const hourlyRateInput = document.getElementById('hourly-rate');
+        const rateText = document.getElementById('rate-text');
+        const revenueIncrease = document.getElementById('revenue-increase');
+        const timeSavings = document.getElementById('time-savings');
+        const totalValue = document.getElementById('total-value');
+
+        function updateROI() {
+            const revenue = parseFloat(revenueInput.value) || 0;
+            const improvement = parseFloat(improvementInput.value) || 0;
+            const timeSaved = parseFloat(timeSavedInput.value) || 0;
+            const hourlyRate = parseFloat(hourlyRateInput.value) || 0;
+            
+            // Update displayed values
+            improvementValue.textContent = improvement + '%';
+            improvementText.textContent = improvement + '%';
+            timeSavedValue.textContent = timeSaved + 'h';
+            hoursSavedText.textContent = timeSaved;
+            rateText.textContent = hourlyRate;
+            
+            // Calculate values
+            const revenueImpact = revenue * (improvement / 100);
+            const timeImpact = timeSaved * 4 * hourlyRate; // 4 weeks in a month
+            const totalImpact = revenueImpact + timeImpact;
+            
+            // Update results
+            revenueIncrease.textContent = '$' + revenueImpact.toLocaleString('en-US', {maximumFractionDigits: 0});
+            timeSavings.textContent = '$' + timeImpact.toLocaleString('en-US', {maximumFractionDigits: 0});
+            totalValue.textContent = '$' + totalImpact.toLocaleString('en-US', {maximumFractionDigits: 0});
+        }
+
+        // Add event listeners
+        revenueInput.addEventListener('input', updateROI);
+        improvementInput.addEventListener('input', updateROI);
+        timeSavedInput.addEventListener('input', updateROI);
+        hourlyRateInput.addEventListener('input', updateROI);
+
+        // Initialize calculator
+        updateROI();
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Swindu/testing13245" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
